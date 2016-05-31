@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="weather-icons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <style>
@@ -26,7 +27,84 @@
   {
     margin: 0px 0px 8px 0px;
   }
+
+  .wi-day-sunny
+  {
+    font-size: 5em;
+    position: relative;
+    -webkit-animation: sun 5s linear 2s infinite alternate;
+  }
+  
+
+  .wi-cloud
+  {
+     font-size: 3.5em;
+     
+  }
+  .wi-raindrops
+  {
+     font-size: 3em;
+     color: white !important;
+     position: relative;
+    -webkit-animation: rain 1s linear 2s infinite alternate;
+
+  }
    
+.wi-lightning
+{
+     font-size: 5em;
+     position: relative;
+    -webkit-animation: thunder 1s linear 2s infinite alternate;
+    color: white !important;
+}
+
+.wi-snowflake-cold
+{
+     font-size: 5em;
+     position: relative;
+}
+
+   
+@-webkit-keyframes sun {
+   
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rain {
+   
+
+    0% {
+    transform: translate(-5px); 
+    transform: rotate(30deg);
+    opacity:0px;
+    }
+    30% {
+    transform: translate(0px);
+    transform: rotate(30deg);
+    opacity:1px;
+    }
+    60% {
+    transform: translate(5px), rotate(30deg);
+    }
+    100% {
+    transform: translate(10px), rotate(30deg);
+    }
+}
+
+@-webkit-keyframes thunder {
+   
+
+    50% {
+    
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    }
+}
+
   @media only screen and (min-width : 992px) {
   .map-tile
   {
@@ -83,19 +161,23 @@
     <div class="col-lg-4">
       <div class="alerts-tile row">ALERTS
         <div class="tile col-lg-12" style="background-color: red">
-         <i class="wi wi-night-sleet"></i>
-        </div>
-      </div>
-      <div class="alerts-tile row">
-        <div class="tile col-lg-12" style="background-color: black">
+         <i class="wi wi-day-sunny"></i>
         </div>
       </div>
       <div class="alerts-tile row">
         <div class="tile col-lg-12" style="background-color: red">
+          <i class="wi wi-cloud"></i><br>
+          <i class="wi wi-raindrops"></i>
         </div>
       </div>
       <div class="alerts-tile row">
-        <div class="tile col-lg-12" style="background-color: black">
+        <div class="tile col-lg-12" style="background-color: red">
+          <i class="wi wi-lightning"></i>
+        </div>
+      </div>
+      <div class="alerts-tile row">
+        <div class="tile col-lg-12" style="background-color: red">
+          <i class="wi wi-snowflake-cold"></i>
         </div>
       </div> 
     </div>
