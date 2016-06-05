@@ -30,9 +30,11 @@
 
   .wi-day-sunny
   {
-    font-size: 5em;
+    font-size: 4.5em;
     position: relative;
-    -webkit-animation: sun 5s linear 2s infinite alternate;
+    top:5px;
+    -webkit-animation: sun 5s linear infinite;
+    
   }
   
 
@@ -46,29 +48,48 @@
      font-size: 3em;
      color: white !important;
      position: relative;
-    -webkit-animation: rain 1s linear 2s infinite alternate;
+     opacity:0;
+    -webkit-animation: rain 1s linear infinite;
 
   }
    
 .wi-lightning
 {
-     font-size: 5em;
+     font-size: 4.5em;
      position: relative;
-    -webkit-animation: thunder 1s linear 2s infinite alternate;
+    -webkit-animation: thunder 1s linear infinite;
     color: white !important;
 }
 
 .wi-snowflake-cold
 {
-     font-size: 5em;
-     position: relative;
+     color: white !important;
+     position: inherit;
+     font-size: 1.2em;
+     
+}
+
+.snowflake1
+{ 
+  transform : translateX(5px);
+  -webkit-animation: snow1 3s linear infinite;
+}
+.snowflake2
+{
+  transform : translateX(6px);
+  -webkit-animation: snow2 3s ease infinite;
+}
+.snowflake3
+{
+  transform : translateX(7px);
+  -webkit-animation: snow3 3s linear infinite;
 }
 
    
 @-webkit-keyframes sun {
-   
+    
     100% {
-    transform: rotate(360deg);
+    transform: rotate(360deg) ;
     }
 }
 
@@ -76,25 +97,83 @@
    
 
     0% {
-    transform: translate(-5px); 
-    transform: rotate(30deg);
-    opacity:0px;
+    transform: translate(15px,-10px) rotate(20deg); 
+    opacity:1;
     }
     30% {
-    transform: translate(0px);
-    transform: rotate(30deg);
-    opacity:1px;
+    transform: translate(13px,-5px) rotate(20deg);
+    opacity:1;
     }
     60% {
-    transform: translate(5px), rotate(30deg);
+    transform: translate(10px,0px) rotate(20deg);
+    opacity:1;
     }
     100% {
-    transform: translate(10px), rotate(30deg);
+    transform: translate(5px,3px) rotate(20deg);
+    opacity:1;
     }
 }
 
+@-webkit-keyframes snow1 {
+  
+      0% {
+    transform: translate(5px,-5px) rotate(90deg); 
+
+    }
+    30% {
+    transform: translate(5px,0px) rotate(180deg);
+
+    }
+    60% {
+    transform: translate(5px,5px) rotate(270deg);
+
+    }
+    100% {
+    transform: translate(5px,10px) rotate(360deg);
+  
+    }
+}
+
+@-webkit-keyframes snow2 {
+    0% {
+    transform: translate(6px,-2px) rotate(90deg); 
+
+    }
+    30% {
+    transform: translate(6px,3px) rotate(180deg);
+
+    }
+    60% {
+    transform: translate(6px,8px) rotate(270deg);
+
+    }
+    100% {
+    transform: translate(6px,12px) rotate(360deg);
+  
+    }
+}
+
+@-webkit-keyframes snow3 {
+    0%{
+    transform: translate(6.5px,-5px) rotate(90deg); 
+
+    }
+    30% {
+    transform: translate(6.5px,0px) rotate(180deg);
+
+    }
+    60% {
+    transform: translate(6.5px,5px) rotate(270deg);
+
+    }
+    100% {
+    transform: translate(6.5px,10px) rotate(360deg);
+  
+    }
+}
+
+
 @-webkit-keyframes thunder {
-   
 
     50% {
     
@@ -155,6 +234,7 @@
       </div>
       <div class="map-tile row">FUEL STATUS
         <div class="map-fuel col-lg-12" style="background-color: blue">
+          
         </div>
       </div> 
     </div>
@@ -177,7 +257,10 @@
       </div>
       <div class="alerts-tile row">
         <div class="tile col-lg-12" style="background-color: red">
-          <i class="wi wi-snowflake-cold"></i>
+          <i class="wi wi-cloud"></i><br>
+          <i class="wi wi-snowflake-cold snowflake1"></i>
+          <i class="wi wi-snowflake-cold snowflake2"></i>
+          <i class="wi wi-snowflake-cold snowflake3"></i>
         </div>
       </div> 
     </div>
